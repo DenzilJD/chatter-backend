@@ -39,17 +39,17 @@ io.on('connection', (socket) => {
     });
 
     socket.on('new message', (newMessage) => {
-        let chat=newMessage.chat;
-        if(!chat.users)
+        let chat = newMessage.chat;
+        if (!chat.users)
             return console.log("chat.users not defined");
         chat.users.forEach(user => {
-            if(user._id===newMessage.sender._id)
+            if (user._id === newMessage.sender._id)
                 return;
-            socket.in(user._id).emit("message recieved",newMessage);            
+            socket.in(user._id).emit("message recieved", newMessage);
         });
     });
-    
-    socket.off('setup',()=>{
+
+    socket.off('setup', () => {
         console.log("USER DISCONNECTED");
         socket.leave(userData._id);
     });

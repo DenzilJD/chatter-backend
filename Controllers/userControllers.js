@@ -36,6 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const authUser = asyncHandler(async (req, res) => {
     const { email, pass } = req.body;
+    console.log('Login request.');
     const user = await User.findOne({ email });
     if (user && (await user.matchPass(pass))) {
         res.json({

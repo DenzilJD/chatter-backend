@@ -15,6 +15,7 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
 app.get('/api', (req, res) => {
     res.send("API is running.");
+    console.log("API is running.");
 });
 const server = app.listen(port, console.log(`Server is running at port ${port}`));
 

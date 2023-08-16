@@ -5,6 +5,11 @@ const connectDB = require("./Config/db");
 const userRoutes = require('./Routes/userRoutes');
 const chatRoutes = require('./Routes/chatRoutes');
 const messageRoutes = require('./Routes/messageRoutes');
+const cors = require('cors');
+
+app.use(cors({
+    origin: 'https://chatterdjd.netlify.app/'
+}));
 
 const port = process.env.PORT || 5000;
 dotenv.config();

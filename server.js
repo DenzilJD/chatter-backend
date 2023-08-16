@@ -8,7 +8,7 @@ const messageRoutes = require('./Routes/messageRoutes');
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'https://chatterdjd.netlify.app/'
+    origin: 'https://chatterdjd.netlify.app'
 }));
 
 const port = process.env.PORT || 5000;
